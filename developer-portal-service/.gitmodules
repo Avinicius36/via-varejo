@@ -1,0 +1,3 @@
+[submodule "commons-services"]
+	path = commons-services
+	url = https://gitlab.engdb.com.br/via-varejo/commons-services

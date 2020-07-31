@@ -1,0 +1,14 @@
+# This file is a template, and might need editing before it works on your project.
+docker-build-develop:
+  # Official docker image.
+  image: docker:latest
+  stage: build
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u "password" -p "PVuozcePO=U8VVOyQD9EaYO6NJ9qeqDd" azengdbcr.azurecr.io
+  script:
+    - docker build --pull -t "azengdbcr.azurecr.io/engdb/developer-portal-service:$CI_COMMIT_REF_SLUG" .
+    - docker push "azengdbcr.azurecr.io/engdb/developer-portal-service:$CI_COMMIT_REF_SLUG"
+  only:
+    - develop
