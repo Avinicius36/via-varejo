@@ -10,12 +10,14 @@ import br.com.engdb.services.devportal.service.mappers.EnvironmentDocumentToReso
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+@Service
 public class EnvironmentService {
 
     @Autowired
@@ -84,4 +86,4 @@ public class EnvironmentService {
     }
 
 }
-}
+
